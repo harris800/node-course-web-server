@@ -51,6 +51,12 @@ app.get('/about', (req, res) => {
     })
 });
 
+app.get('/profolio', (req, res) => {
+    res.render('profolio.hbs', {
+        pageTitle: 'Profolio Page',
+    })
+});
+
 app.get('/bad', (req, res) => {
     res.send({
         errorMessage: 'Error'
