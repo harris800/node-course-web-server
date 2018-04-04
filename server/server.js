@@ -82,7 +82,7 @@ app.patch('/todos/:id', authenticate, (req, res) => {
     body.completed = false;
     body.completedAt = null;
   }
-  Todo.findBOneAndUpdate({_id: id, _creator: req.user._id}, {$set: body}, {
+  Todo.findOneAndUpdate({_id: id, _creator: req.user._id}, {$set: body}, {
     new: true
   }).then(todo => {
     if (!todo) {
